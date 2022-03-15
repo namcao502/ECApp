@@ -6,15 +6,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.ecommerceapp.R;
 import com.example.ecommerceapp.Variables;
 import com.example.ecommerceapp.adapters.SeeAllAdapter;
+import com.example.ecommerceapp.models.CategoryModel;
 import com.example.ecommerceapp.models.SeeAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -26,7 +29,7 @@ public class SeeAllActivity extends AppCompatActivity {
     //Toolbar seeAllToolbar;
     SeeAllAdapter seeAllAdapter;
     List<SeeAllModel> seeAllModelList;
-    //List<CategoryModel> categoryModelList;
+    List<CategoryModel> categoryModelList;
     List<String> list;
 
     FirebaseFirestore db;
@@ -50,7 +53,8 @@ public class SeeAllActivity extends AppCompatActivity {
         seeAllAdapter = new SeeAllAdapter(this, seeAllModelList);
         recyclerView.setAdapter(seeAllAdapter);
 
-        //categoryModelList = new ArrayList<>();
+        categoryModelList = new ArrayList<>();
+        list = new ArrayList<>();
 
         //store category name in categoryModelList
 //        db.collection("Category")
@@ -59,7 +63,7 @@ public class SeeAllActivity extends AppCompatActivity {
 //                    @Override
 //                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
 //                        if (task.isSuccessful()) {
-//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                            for (QueryDocumentSnapshot  document : task.getResult()) {
 //                                CategoryModel categoryModel = document.toObject(CategoryModel.class);
 //                                categoryModelList.add(categoryModel);
 //                            }
@@ -67,13 +71,13 @@ public class SeeAllActivity extends AppCompatActivity {
 //                    }
 //                });
 
-        list = new ArrayList<>();
         list.add("gaming");
         list.add("learning");
-        list.add("technology");
-        list.add("macbook");
         list.add("luxury");
         list.add("lightweight");
+        list.add("macbook");
+        list.add("technology");
+
 
         for (int i=0; i<list.size(); i++){
             if (type != null && type.equalsIgnoreCase(list.get(i))){

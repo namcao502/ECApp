@@ -87,6 +87,7 @@ public class DetailActivity extends AppCompatActivity {
                 SimpleDateFormat thisTime = new SimpleDateFormat("HH : mm : ss");
                 currentTime = thisTime.format(calendar.getTime());
 
+                //create a new collection
                 final HashMap<String, Object> cartMap = new HashMap<>();
                 cartMap.put("productName", textViewName.getText().toString());
                 cartMap.put("productPrice", textViewPrice.getText().toString());

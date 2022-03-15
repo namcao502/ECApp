@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecommerceapp.R;
+import com.example.ecommerceapp.activities.PaymentActivity;
 import com.example.ecommerceapp.models.CartModel;
 
 import java.util.List;
@@ -36,7 +38,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textViewCurrentDate.setText(list.get(position).getCurrentDate());
-        holder.textViewcurrentTime.setText(list.get(position).getCurrentTime());
+        holder.textViewCurrentTime.setText(list.get(position).getCurrentTime());
         holder.textViewProductName.setText(list.get(position).getProductName());
         holder.textViewProductPrice.setText(list.get(position).getProductPrice());
         holder.textViewQuantity.setText(list.get(position).getQuantity());
@@ -54,11 +56,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewcurrentTime, textViewCurrentDate, textViewProductName, textViewProductPrice, textViewQuantity, textViewTotalPrice;
+        TextView textViewCurrentTime, textViewCurrentDate, textViewProductName, textViewProductPrice, textViewQuantity, textViewTotalPrice;
+        Button buttonBuy;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewCurrentDate = itemView.findViewById(R.id.current_date);
-            textViewcurrentTime = itemView.findViewById(R.id.current_time);
+            textViewCurrentTime = itemView.findViewById(R.id.current_time);
             textViewProductName = itemView.findViewById(R.id.product_name);
             textViewProductPrice = itemView.findViewById(R.id.product_price);
             textViewQuantity = itemView.findViewById(R.id.quantity);

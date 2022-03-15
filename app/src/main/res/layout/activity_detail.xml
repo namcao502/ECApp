@@ -99,7 +99,9 @@
                 android:text="Giá"
                 android:textColor="@color/black"
                 android:textSize="21sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold">
+
+            </TextView>
 
             <LinearLayout
                 android:layout_marginTop="10dp"
@@ -108,10 +110,10 @@
                 android:layout_gravity="center">
 
                 <ImageView
-                    android:id="@+id/detail_add_item"
+                    android:id="@+id/detail_remove_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/plusicon">
+                    android:src="@drawable/iconminus">
 
                 </ImageView>
 
@@ -127,11 +129,12 @@
 
                 </TextView>
 
+
                 <ImageView
-                    android:id="@+id/detail_remove_item"
+                    android:id="@+id/detail_add_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/iconminus">
+                    android:src="@drawable/plusicon">
 
                 </ImageView>
 
@@ -146,7 +149,7 @@
         android:id="@+id/detail_add_to_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add to cart"
+        android:text="Thêm vào giỏ hàng"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/detail_buy_now"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +163,7 @@
         android:id="@+id/detail_buy_now"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buy now"
+        android:text="Mua ngay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/detail_add_to_cart"

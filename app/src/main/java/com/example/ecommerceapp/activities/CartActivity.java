@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -67,6 +68,13 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+        buttonBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver ,new IntentFilter("TotalMoney"));
 
